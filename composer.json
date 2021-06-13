@@ -1,0 +1,26 @@
+{
+    "name": "accudio/plaiceholder",
+    "description": "PHP implementation of Plaiceholder - Beautiful image placeholders, without the hassle.",
+    "homepage": "https://github.com/accudio/php-plaiceholder",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Alistair Shepherd",
+            "email": "alistair@accudio.com"
+        },
+        {
+            "name": "Joe Bell",
+            "email": "joe@joebell.co.uk"
+        }
+    ],
+    "require": {
+        "kornrunner/blurhash": "^1.2",
+        "php": ">=7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "accudio\\Plaiceholder\\": "src"
+        }
+    }
+}
