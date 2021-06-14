@@ -1,6 +1,6 @@
 {
-    "name": "accudio/plaiceholder",
-    "description": "PHP implementation of Plaiceholder - Beautiful image placeholders, without the hassle.",
+    "name": "accudio/php-plaiceholder",
+    "description": "PHP implementation of Plaiceholder - CSS, SVG, Base64 and Blurhash image placeholders.",
     "homepage": "https://github.com/accudio/php-plaiceholder",
     "type": "library",
     "license": "Apache-2.0",

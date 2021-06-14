@@ -1,13 +1,6 @@
-<h1 align="center">
-  PHP plaiceholder
-</h1>
+# Plaiceholder for PHP
 
-<p align="center">
-  <strong>Beautiful image placeholders, without the hassle.</strong>
-</p>
-<p align="center">
-  Choose-your-own adventure, from pure CSS to SVG…
-</p>
+PHP implementation of [Plaiceholder](https://plaiceholder.co/) - CSS, SVG, Base64 and Blurhash image placeholders.
 
 ---
 
@@ -17,24 +10,26 @@
 1. [Installation](#installation)
 1. [Setup](#setup)
 1. [FAQs](#faqs)
+1. [License](#license)
+1. [Acknowledgements](#acknowledgements)
 
 ---
 
 ## Introduction
 
-[Plaiceholder](https://plaiceholder.co/) is a Node.js utility for generating low quality image placeholders. This package is a re-write in PHP and distributed via composer.
+[Plaiceholder](https://plaiceholder.co/) is a Node.js utility for generating low quality image placeholders. This package is a *re-write in PHP* and distributed via composer.
 
-PHP plaiceholder broadly matches the original JS implementation but implements it in pure PHP and hence has a different syntax. This readme will only cover differences from the JS implementation.
+Plaiceholder for PHP broadly matches the original JS implementation but implements it in pure PHP and hence has a different syntax. **This readme will only cover differences from the JS implementation.**
 
 For information about the strategies available, their pros and cons, and information about the original project check out the [Plaiceholder docs](https://plaiceholder.co/docs).
 
 
 ## Installation
 
-PHP Plaiceholder should ideally be installed with composer:
+Plaiceholder for PHP should ideally be installed with composer:
 
 ```
-composer require accudio/plaiceholder
+composer require accudio/php-plaiceholder
 ```
 
 If using composer, make sure your application includes `require_once 'vendor/autoload.php';`.
@@ -44,14 +39,14 @@ You can alternatively download the repo and `require` the appropriate files from
 
 ## Setup
 
-Whichever strategy you use, you will first need to create an instance of plaiceholder for your image:
+Whichever strategy you use, you will first need to create an instance of PHPPlaiceholder for your image:
 
 ```php
 $image_path = '/path/to/your/image.jpg';
-$plaiceholder = new accudio\Plaiceholder\Plaiceholder($image_path);
+$placeholder = new accudio\PHPPlaiceholder\PHPPlaiceholder($image_path);
 ```
 
-The Plaiceholder object accepts an absolute path to the file as stored on your server. ***PHP Plaiceholder does not current support remote images***.
+The PHPPlaiceholder object accepts an absolute path to the file as stored on your server. ***Plaiceholder for PHP does not current support remote images***.
 
 ### CSS
 
@@ -64,15 +59,15 @@ CSS strategy has three output modes:
 [CSS strategy on plaiceholder docs](https://plaiceholder.co/docs/usage#css).
 
 ```php
-$css_style = $plaiceholder->get_css();
+$css_style = $placeholder->get_css();
 // background-image: linear-gradient(...); background-position: 0 0,0 50%,0 100%;
 // background-size:100% 33.33%; background-repeat:no-repeat;
 
-$css_properties = $plaiceholder->get_css('properties');
+$css_properties = $placeholder->get_css('properties');
 // --plaice-image: linear-gradient(...); --plaice-position: 0 0,0 50%,0 100%;
 // --plaice-size:100% 33.33%; --plaice-repeat:no-repeat;
 
-$css_array = $plaiceholder->get_css('array');
+$css_array = $placeholder->get_css('array');
 // [
 //   'background-image'    => 'linear-gradient(...)',
 //   'background-position' => '0 0,0 50%,0 100%',
@@ -88,7 +83,7 @@ SVG returns a string of SVG markup. By default it will include a style attribute
 [SVG strategy on plaiceholder docs](https://plaiceholder.co/docs/usage#svg).
 
 ```php
-$svg_with_styles = $plaiceholder->get_svg();
+$svg_with_styles = $placeholder->get_svg();
 // <svg xmlns="http://www.w3.org/2000/svg"
 //   style="
 //     position: absolute;
@@ -106,7 +101,7 @@ $svg_with_styles = $plaiceholder->get_svg();
 //   ...
 // </svg>
 
-$svg_no_styles = $plaiceholder->get_svg(false);
+$svg_no_styles = $placeholder->get_svg(false);
 // <svg xmlns="http://www.w3.org/2000/svg"
 //   width="100%" height="100%"
 //   shaperendering="crispEdges" preserveAspectRatio="none"
@@ -119,14 +114,14 @@ $svg_no_styles = $plaiceholder->get_svg(false);
 
 ### Base64
 
-Generates low-resolution image and encodes as base64, include data-uri and format. Ready for inserting into `src` attribute or `url()` css function.
+Generates low-resolution image and encodes as base64, including data-uri and format. Ready for inserting into `src` attribute or `url()` css function.
 
 [Base64 strategy on plaiceholder docs](https://plaiceholder.co/docs/usage#base64).
 
-**Note:** Due to a difference in the image library used between plaiceholder and PHP Plaiceholder (sharp vs ImageMagick), the base64 strategy doesn't look the same. Whereas plaiceholder tweaks the saturation to make the generated image look slightly better, ImageMagick seems to do fairly well with no tweaking so I've not made changes. Any feedback is appreciated.
+**Note:** Due to a difference in the image library used between plaiceholder and Plaiceholder for PHP (sharp vs ImageMagick), the base64 strategy doesn't look the same. Whereas plaiceholder tweaks the saturation to make the generated image look slightly better, Imagick seems to do fairly well with no tweaking so I've not made changes. Any feedback is appreciated.
 
 ```php
-$base64 = $plaiceholder->get_base64();
+$base64 = $placeholder->get_base64();
 // data:image/jpeg;base64,...
 ```
 
@@ -136,10 +131,10 @@ Creates and returns Blurhash string using [php-blurhash by kornrunner](https://g
 
 [Blurhash strategy on plaiceholder docs](https://plaiceholder.co/docs/usage#blurhash).
 
-**Note:** Due to a difference in blurhash encoder between plaiceholder and PHP Plaiceholder, the blurhash strategy can look slightly different in some cases. I am not familiar with blurhash but if someone who is more knowledgeable here can contribute please do.
+**Note:** Due to a difference in blurhash encoder between plaiceholder and Plaiceholder for PHP, the blurhash strategy can look slightly different in some cases. I am not familiar with blurhash but if someone who is more knowledgeable here can contribute please do.
 
 ```php
-$blurhash = $plaiceholder->get_blurhash();
+$blurhash = $placeholder->get_blurhash();
 // UqF}a5-WR*xw~E$+WBt8-DxHWBa$$-xHWBai
 ```
 
@@ -150,10 +145,30 @@ $blurhash = $plaiceholder->get_blurhash();
 
 ### What about remote images?
 
-Currently PHP Plaiceholder does not support remote images. As PHP pages are generally generated when requested rather than in advance it wouldn't be great practice to make a network request in order to generate placeholders. I would suggest you use local images or run store plaiceholder results in a database for later use. That said, if you have a need for it then let me know and I can consider adding - or make a pull request.
+Currently Plaiceholder for PHP does not support remote images. As PHP pages are generally generated when requested rather than in advance it wouldn't be great practice to make a network request in order to generate placeholders. I would suggest you use local images or store results in a database for later use. That said, if you have a need for it then let me know and I can consider adding - or make a pull request.
 
 ### Is there a plugin for XYZ?
 
 There are currently no plugins for PHP CMS' or otherwise. I would be keen for plugins for Craft CMS and perhaps WordPress, but not at this time.
 
-PHP Plaiceholder is fairly simple so likely able to integrate with most platforms fairly easily. I encourage you to make your own integrations, or feel free to build and release plugins or libraries on top of PHP Plaiceholder.
+Plaiceholder for PHP is fairly simple so likely able to integrate with most platforms easily. I encourage you to make your own integrations, or feel free to build and release plugins or libraries on top of Plaiceholder for PHP - following the [plaiceholder contribution guide](https://github.com/joe-bell/plaiceholder/blob/main/CONTRIBUTING.md).
+
+---
+
+## License
+
+Apache-2.0 License © [Alistair Shepherd](https://alistairshepherd.uk)
+
+## Acknowledgements
+
+#### [Joe Bell](https://github.com/joe-bell) ([Plaiceholder](https://github.com/joe-bell/plaiceholder))
+
+Apache-2.0 License copyright © Joe Bell. All Rights Reserved.
+
+#### [Boris Momčilović](https://github.com/kornrunner) ([php-blurhash](https://github.com/kornrunner/php-blurhash))
+
+MIT License copyright © Boris Momčilović. All Rights Reserved.
+
+#### [Imagick](https://github.com/Imagick/imagick)
+
+Copyright (c) 1999 - 2011 The PHP Group. All rights reserved.
