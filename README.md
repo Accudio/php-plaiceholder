@@ -1,3 +1,12 @@
+<p align="center">
+  An externally-maintained implementation of
+  <strong>
+    <a href="https://github.com/joe-bell/plaiceholder">
+        Plaiceholder
+    </a>
+  </strong>
+</p>
+
 # Plaiceholder for PHP
 
 PHP implementation of [Plaiceholder](https://plaiceholder.co/) - CSS, SVG, Base64 and Blurhash image placeholders.
@@ -163,7 +172,10 @@ Apache-2.0 License © [Alistair Shepherd](https://alistairshepherd.uk)
 
 #### [Joe Bell](https://github.com/joe-bell) ([Plaiceholder](https://github.com/joe-bell/plaiceholder))
 
-Apache-2.0 License copyright © Joe Bell. All Rights Reserved.
+Copyright © 2020-2021, Joe Bell. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License").
+
 
 #### [Boris Momčilović](https://github.com/kornrunner) ([php-blurhash](https://github.com/kornrunner/php-blurhash))
 
