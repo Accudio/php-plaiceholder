@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "accudio\\Plaiceholder\\": "src"
+            "accudio\\PHPPlaiceholder\\": "src"
         }
     }
 }
