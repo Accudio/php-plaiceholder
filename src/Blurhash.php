@@ -1,14 +1,14 @@
 <?php
 /**
- * PHP-Plaiceholder Strategies - Blurhash
+ * Plaiceholder for PHP - Strategies - Blurhash
  *
  * @see https://blurha.sh/
  *
- * @package    Plaiceholder
- * @subpackage Base64
+ * @package    PHPPlaiceholder
+ * @subpackage Blurhash
  */
 
-namespace accudio\Plaiceholder;
+namespace accudio\PHPPlaiceholder;
 
 class Blurhash {
   /**

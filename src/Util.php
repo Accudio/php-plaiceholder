@@ -1,12 +1,12 @@
 <?php
 /**
- * PHP-Plaiceholder Utilities
+ * Plaiceholder for PHP - Utilities
  *
- * @package    phpplaiceholder
- * @subpackage util
+ * @package    PHPPlaiceholder
+ * @subpackage Util
  */
 
-namespace accudio\Plaiceholder;
+namespace accudio\PHPPlaiceholder;
 
 class Util {
   /**

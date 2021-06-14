@@ -1,8 +1,8 @@
 <?php
 /**
- * PHP-Plaiceholder
+ * Plaiceholder for PHP
  *
- * PHP implementation of Plaiceholder - Beautiful image placeholders, without the hassle.
+ * PHP implementation of Plaiceholder
  *
  * @see     https://github.com/joe-bell/plaiceholder Original JavaScript implementation of Plaiceholder
  *
@@ -10,17 +10,17 @@
  * @author  Joe Bell <joe@joebell.co.uk>
  * @license Apache-2.0
  * @version 1.0
- * @package phpplaiceholder
+ * @package PHPPlaiceholder
  */
 
-namespace accudio\Plaiceholder;
+namespace accudio\PHPPlaiceholder;
 
 /**
- * Plaiceholder
+ * PHPPlaiceholder
  *
- * Root class for Plaiceholder, includes image loading, optimisation and methods for calling the different strategies.
+ * Root class for PHPPlaiceholder, includes image loading, optimisation and methods for calling the different strategies.
  */
-class Plaiceholder {
+class PHPPlaiceholder {
   const SIZE_MIN = 4;
   const SIZE_MAX = 64;
 
@@ -46,7 +46,7 @@ class Plaiceholder {
    * @param  string $path     Absolute path to source image
    * @param  array  $options  Associative array of options. Only option available is `size`, whcih configures the chunk size of generated plaiceholders. `size` should be a value between 4-64, defaults to 4.
    *
-   * @return Plaiceholder     Instance of Plaiceholder
+   * @return PHPPlaiceholder     Instance of Plaiceholder
    */
   function __construct($path, $options = [])
   {

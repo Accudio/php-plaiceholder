@@ -1,12 +1,12 @@
 <?php
 /**
- * PHP-Plaiceholder Strategies - Base64
+ * Plaiceholder for PHP - Strategies - Base64
  *
- * @package    Plaiceholder
+ * @package    PHPPlaiceholder
  * @subpackage Base64
  */
 
-namespace accudio\Plaiceholder;
+namespace accudio\PHPPlaiceholder;
 
 class Base64 {
   /**

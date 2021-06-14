@@ -1,12 +1,12 @@
 <?php
 /**
- * PHP-Plaiceholder Strategies - CSS
+ * Plaiceholder for PHP - Strategies - CSS
  *
- * @package    Plaiceholder
- * @subpackage Css
+ * @package    PHPPlaiceholder
+ * @subpackage CSS
  */
 
-namespace accudio\Plaiceholder;
+namespace accudio\PHPPlaiceholder;
 
 class CSS {
   /**

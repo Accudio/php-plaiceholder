@@ -1,12 +1,12 @@
 <?php
 /**
- * PHP-Plaiceholder Strategies - SVG
+ * Plaiceholder for PHP - Strategies - SVG
  *
- * @package    Plaiceholder
- * @subpackage Svg
+ * @package    PHPPlaiceholder
+ * @subpackage SVG
  */
 
-namespace accudio\Plaiceholder;
+namespace accudio\PHPPlaiceholder;
 
 class SVG {
   /**
