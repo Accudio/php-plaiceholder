@@ -55,7 +55,7 @@ $image_path = '/path/to/your/image.jpg';
 $placeholder = new accudio\PHPPlaiceholder\PHPPlaiceholder($image_path);
 ```
 
-The PHPPlaiceholder object accepts an absolute path to the file as stored on your server. ***Plaiceholder for PHP does not current support remote images***.
+The PHPPlaiceholder object accepts an absolute path to the file as stored on your server, or the full URL for a remote image. For local images you may find the PHP function `realpath()` useful for getting the absolute path.
 
 ### CSS
 
@@ -149,12 +149,14 @@ $blurhash = $placeholder->get_blurhash();
 
 ## FAQs
 
-- [What about remote images?](#what-about-remote-images)
+- [When should I generate plaiceholders?](#shen-should-i-generate-plaiceholders)
 - [Is there a plugin for xyz?](#is-there-a-plugin-for-xyz)
 
-### What about remote images?
+### When should I generate plaiceholders?
 
-Currently Plaiceholder for PHP does not support remote images. As PHP pages are generally generated when requested rather than in advance it wouldn't be great practice to make a network request in order to generate placeholders. I would suggest you use local images or store results in a database for later use. That said, if you have a need for it then let me know and I can consider adding - or make a pull request.
+Although you are able to perform plaiceholder generation on each request, it is not recommended. Especially for large images generation can take a bit of time and resources. This is made even worse by remote images, which require an additional connection in order to download the image to the server.
+
+In production ideally you should store results in a database or file cache so you only need to generate plaiceholders for new or changed images.
 
 ### Is there a plugin for XYZ?
 
