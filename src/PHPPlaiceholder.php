@@ -9,7 +9,7 @@
  * @author  Alistair Shepherd <alistair@accudio.com>
  * @author  Joe Bell <joe@joebell.co.uk>
  * @license Apache-2.0
- * @version 1.0
+ * @version 1.1.0
  * @package PHPPlaiceholder
  */
 
@@ -63,6 +63,35 @@ class PHPPlaiceholder {
    */
   private function load_image()
   {
+    /**
+     * Remote Images
+     *
+     * If the provided path is remote, download the image and load it into Imagick as an image blob
+     */
+    if (substr($this->path, 0, 4) === 'http') {
+      // using a stream context to specify a low timeout
+      $stream_context = stream_context_create([
+        'http' => [
+          'method'  => 'GET',
+          'timeout' => 5
+        ]
+      ]);
+      $remote_img = file_get_contents($this->path, false, $stream_context);
+      if (!$remote_img) return false;
+
+      $image = new \Imagick();
+      $success = $image->readImageBlob($remote_img);
+      if (!$success) return false;
+
+      return $this->src = $image;
+    }
+
+    /**
+     * Local Images
+     *
+     * Check image exists before loading into Imagick
+     */
+    if (!file_exists($this->path)) return false;
     $this->src = new \Imagick($this->path);
   }
 
